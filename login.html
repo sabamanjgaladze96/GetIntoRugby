@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIR | Login</title>
+    <link href="GIR.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap">
+    <meta name="googlebot" content="notranslate">
+    <meta name="robots" content="index">
+    <meta name="description" content ="Start playing the greatest sport in the world!">
+    <style>
+        footer{
+            position: relative;
+            bottom: 0;
+            right: 0;
+        }
+        .abovelogin a{
+            margin-left: 5%;
+        }
+        
+        .boxtitles p{
+            font-size: 2vh;
+            margin-bottom: 0;
+        }
+    
+        .inputs{ 
+            display: flex;
+            justify-content: center;
+            border-radius: 2%;
+            overflow: hidden;
+        }
+        .inputssubmit{ 
+            display: flex;
+            justify-content: center;
+            border-radius: 20%;
+        }
+        
+        .inputssubmit input{ 
+            border-radius: 10px;
+            padding: 0.5%;
+            width: 21.5%;
+            font-size: 3vh;
+            font-family: 'Proza Libre', sans-serif;
+            font-weight: bold;
+            background-color: #5bab2c;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #434141;
+        }
+    
+        .inputssubmit input:hover{ 
+            background-color: #3a6f1b;
+        }
+    
+        .inputs input{
+            padding: 0.8%;
+            border-radius: 10px;
+            width: 20%;
+            font-size: 1.6vh;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #434141;
+        }
+    
+        .inputs input:hover{
+            background-color: #D9D9D9;
+        }
+    
+        p {
+            color: white;
+            text-align: center;
+        }
+        .container .col{
+            text-align: center;
+        }
+        .container .col .fbbtn{
+            background-color:#D9D9D9;
+            border-radius: 7px;
+            margin-right: 0.5%;
+            padding: 0.9%;
+            color: #00419B;
+        }
+        .container .col .googlebtn{
+            background-color: #D9D9D9;
+            border-radius: 7px;
+            margin-left: 0.5%;
+            padding: 0.95%;
+            color: #00419B;
+        }
+        body{
+            background-image: url(Rugby-World-Cup.png);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        body h1{
+            text-align: center; 
+            color: white;
+        }
+        
+        body h2 {
+            text-align: center; 
+            color: white; 
+        }
+    
+        body a {
+            text-decoration: none;
+        }
+        body a:visited {
+            color: white;
+        }
+        nav .navigation a:hover{
+            text-decoration: none;
+        }
+        body a:hover {
+            text-decoration: underline;
+        }
+    
+        .dividers {
+            display: flex;
+            justify-content: center;
+        }
+        .dividers img {
+            max-width: 30%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 5%;
+        }
+        .boxtitles a{
+            font-size: 1.7vh;
+        }
+        .dropdown-content a:hover{
+            text-decoration: none;
+        }
+        .dropdown-content {
+            left: 5%;
+        }
+        
+        @media only screen and (max-width: 600px) {
+                .boxtitles p{
+                font-size: 1vh;
+            }
+            h2{
+                font-size: 1.5vh;
+            }
+            .inputssubmit input{
+                width: 32%;
+            }
+
+            .inputs input{
+                width: 30%;
+            }
+
+            .boxtitles p:nth-child(1){
+                margin-left: 6%;
+            }
+            .boxtitles p:nth-child(2){
+                margin-right: 10px;
+            }
+            .boxtitles a{
+            font-size: 1vh;
+            margin-right: 5%;
+            }
+            .inputssubmit input{
+                font-size: 1.3vh;
+            }
+            .container .col .fbbtn{
+            font-size: 1.3vh;
+            }
+            .container .col .googlebtn{
+            font-size: 1.3vh;
+            }
+        }
+        @media only screen and (min-width: 601px) and (max-width: 1282px){
+            .boxtitles p{
+                font-size: 1.7vh;
+            }
+            .inputssubmit input{
+                width: 32%;
+            }
+
+            .inputs input{
+                width: 30%;
+            }
+            .boxtitles p:nth-child(1){
+                margin-left: 6%;
+            }
+            .boxtitles p:nth-child(2){
+                margin-right: 10%;
+            }
+            .boxtitles a{
+            font-size: 0.7vh;
+            margin-right: 5%;
+            }
+            .inputssubmit input{
+                font-size: 1.7vh;
+            }
+            .container .col .fbbtn{
+            font-size: 1.7vh;
+            }
+            .container .col .googlebtn{
+            font-size: 1.7vh;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <nav>
+        <div class="logocorner">
+            <a href="index.html"><img src="GIRwhiteball.png" alt="GIRwhiteball" style="text-align: left; max-width: 30px;"></a>
+        </div>
+
+        <div style="margin-right: 42.6%; font-size: 2.191780821917808vh;" class="navigation">
+            <a href="https://www.world.rugby/organisation/about-us/overview"> ABOUT US </a>
+            <div class="dropdown">
+                <a href="">BROWSE</a>
+                <div class="dropdown-content">
+                  <a href="searchresults.html">BROWSE TEAMS</a>
+                  <a href="">BROWSE LEAGUES</a>
+                </div>
+            </div>
+
+            <a href="https://www.world.rugby/news"> NEWS </a>
+        </div>
+        
+    </nav>
+    <h1>Welcome</h1>
+    <h2>Don't have an account? <a href="register.html">Register now</a></h2>
+    
+    <div class="dividers">
+        <img src="DividerSocial.svg" alt="divider">
+    </div>
+    
+    <br>
+    
+    <br>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="col">
+              <a href="" class="fbbtn">
+                <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+              </a>
+              
+              <a href="" class="googlebtn">
+                <i class="fa fa-google fa-fw"></i> Login with Google
+              </a>
+            </div>
+            
+            <br>
+        </form>
+    </div>
+
+
+    <p> or</p>
+
+    <div class="dividers">
+        <img src="DividerSocial.svg" alt="divider">
+    </div>
+
+    <br>
+    
+    <div class="boxtitles">
+        <p style="margin-right: 9%;">Email address/Username</p>
+    </div>
+    <div style="margin-bottom: 0.3%;" class="inputs">
+        <input type="text" name="username" placeholder="youremail@email.com" required>
+    </div>
+    <div class="boxtitles">
+        <p style="margin-right: 16%; margin-top: 0;">Password</p>
+    </div>
+    <div style="margin-bottom: 0.5%;" class="inputs">
+        <input type="password" name="password" placeholder="" required>
+    </div>
+        
+    <div style="text-align: center; margin-left: 12.5%;" class="boxtitles">
+        <a href="">Forgot your password?</a>
+    </div>
+    <div style="margin-top: 2%;" class="inputssubmit">
+        <input type="submit" value="Log in">
+    </div>
+
+<br>
+<br>
+<br>
+<footer> 
+
+    Copyright &copy; 2024
+    
+    <div class="contact">
+    <a href="contactus.html"> CONTACT US </a>
+    </div>
+</footer>
+<script src="GIRJAVA.js"></script>
+
+</body>
+
+
+
+</html>
