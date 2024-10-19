@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIR | Search Results</title>
+    <link href="{% static 'css/GIR.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap">
+    <meta name="googlebot" content="notranslate">
+    <meta name="robots" content="index">
+    <meta name="description" content ="Start playing the greatest sport in the world!">
+</head>
+
+<body>
+   
+    <nav>
+        <div class="logocorner">
+            <a href="{% url 'home' %}"><img src="{% static 'images/GIRwhiteball.png' %}" alt="GIRwhiteball" style="text-align: left; max-width: 30px;"></a>
+        </div>
+
+        <div class="navigation">
+            <a href="https://www.world.rugby/organisation/about-us/overview"> ABOUT US </a>
+            <div class="dropdown">
+                <a href="">BROWSE</a>
+                <div class="dropdown-content">
+                  <a href="searchresults.html">BROWSE TEAMS</a>
+                  <a href="">BROWSE LEAGUES</a>
+                </div>
+            </div>
+
+            <a href="https://www.world.rugby/news"> NEWS </a>
+        </div>
+        
+        <div style="font-size: 1.7vh;" class="account">
+            <img src="{% static 'svgs/accountdivider.svg' %}" alt="">
+            <img src="{% static 'svgs/accounticon.svg' %}" alt="" style="margin-left: 13%;">
+            <a href="{% url 'login' %}"> LOGIN </a>
+            <a href="{% url 'register' %}"> REGISTER </a>
+        </div>
+
+    </nav>
+    
+    <div class="experiment">
+        <br>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a team, or just enter your address">
+            <a href="{% url 'searchresults' %}"><button type="submit" id="search-button">Search</button></a>
+        </div>
+        <div class="dividersearchresultstop">
+            <svg style="max-width: 100%;" width="1728" height="1" viewBox="0 0 1728 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1728" height="1" fill="#D9D9D9"/>
+                </svg>
+        </div>
+    </div>
+    
+    
+
+    <br>
+    <a href="{% url 'team' %}" class="clontarf">
+        <div  class="flex-containerresults">
+            <div class="section">
+                <img src="{% static 'images/clontarflogo.png' %}" alt="clontarf">
+            </div>
+            <div class="section">
+                <div class="headers"> 
+                    <h2>CLONTARF RUGBY CLUB | EST 1876</h2>
+                    <h3>DIVISION:1A</h3>
+                </div>
+                <p>Clontarf Football Club is an Irish rugby union club based in Clontarf, Dublin. The club plays in Division 1A of the All-Ireland League. Clontarf Football Club currently plays at Castle Avenue, where it moved in 1896. The club gets its mascot from the meaning of Clontarf, which ...</p>
+            </div>
+            <div class="section">
+                <h2>AGE GROUP</h2>
+                <p>YOUTH-SENIOR</p>
+            </div>
+            <div class="section">
+                <h2>TRAINING GROUND ADDRESS</h2>
+                <p>Castle Ave, Clontarf East, Dublin 3</p>
+            </div>
+        </div>
+    </a>
+    <br>
+
+    <div class="flex-containerresults">
+        <div class="section">
+            <img style="margin-left: 20%;" src="{% static 'images/UCD.png' %}" alt="UCD">
+        </div>
+        <div class="section">
+            <div class="headers"> 
+                <h2>University College Dublin R.F.C | EST 1910</h2>
+                <h3>DIVISION:1A</h3>
+            </div>
+            <p>University College Dublin Rugby Football Club (also referred as UCD) is a rugby union club based in Dublin, Ireland, and plays in Division 1A of the All-Ireland League. They play their home games at UCD Bowl.
+                The club was founded in 1910 and they won their first trophy, the Leinster ...</p>
+        </div>
+        <div class="section">
+            <h2>AGE GROUP</h2>
+            <p>SENIOR</p>
+        </div>
+        <div class="section">
+            <h2>TRAINING GROUND ADDRESS</h2>
+            <p>UCD Bowl, University College Dublin, Dublin, Befield, Dublin 4</p>
+        </div>
+    </div>
+    
+    <svg class="dark" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="turndark()">
+        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+        <g id="Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="ic_fluent_dark_theme_24_regular" fill="#212121" fill-rule="nonzero">
+                <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z" id="Color">
+    </path>
+            </g>
+        </g>
+    </svg>
+
+    <br>
+
+    <div class="flex-containerresults">
+        <div class="section">
+            <img style="margin-left: 8%;" src="{% static 'images/Terenure.png' %}" alt="Terenure">
+        </div>
+        <div class="section">
+            <div class="headers"> 
+                <h2>TERENURE COLLEGE R.F.C  | EST 1940</h2>
+                <h3>DIVISION:1A</h3>
+            </div>
+            <p>Terenure College RFC is an amateur rugby union club based in the Terenure suburb of Dublin, Ireland. The institution, founded on 5 November 1940, currently plays in Division 1A of the All-Ireland League.
+                Terenure College RFC was founded on 5 November 1940. With a great love ...</p>
+        </div>
+        <div class="section">
+            <h2>AGE GROUP</h2>
+            <p>SENIOR</p>
+        </div>
+        <div class="section">
+            <h2>TRAINING GROUND ADDRESS</h2>
+            <p>Lakelands
+                Templeogue Rd, Templeogue, Dublin 6W, Co. Dublin    
+            </p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="flex-containerresults">
+        <div class="section">
+            <img style="margin-left: 19%;" src="{% static 'images/Wanderers.png' %}" alt="Wanderers">
+        </div>
+        <div class="section">
+            <div class="headers"> 
+                <h2>WANDERERS F.C | EST 1870</h2>
+                <h3>DIVISION:2B</h3>
+            </div>
+            <p>Wanderers Football Club is a senior rugby union club based in Dublin, Ireland, playing in Division 2B of the All-Ireland League. It is one of the oldest rugby clubs in Ireland, however its exact date of foundation is open to question. In 1860 a team by the name of Wanderers played against Dublin University. However the current team gives its foundation date as 1870. While the link between the two teams is</p>
+        </div>
+        <div class="section">
+            <h2>AGE GROUP</h2>
+            <p>SENIOR</p>
+        </div>
+        <div class="section">
+            <h2>TRAINING GROUND ADDRESS</h2>
+            <p>Lansdowne Road Ballsbridge Dublin 4 
+                Merrion Road Ballsbridge Dublin 4       
+            </p>
+        </div>
+    </div>
+
+    <br>
+
+<footer> 
+
+    Copyright &copy; 2024
+    
+    <div class="contact">
+    <a href="contactus.html"> CONTACT US </a>
+    </div>
+</footer>
+<script src="{% static 'js/GIRJAVA.js' %}"></script>
+</body>
+</html>
