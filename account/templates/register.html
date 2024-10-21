@@ -11,7 +11,26 @@
     <meta name="robots" content="index">
     <meta name="description" content="Start playing the greatest sport in the world!">
     <style>
+        
+        .registration-type{
+            display: flex;
+            justify-content: center;
+            color: white;
+            padding: 2%;
+            gap: 1%;
+        }
+
+        .registration-type select{
+            width: 10%;
+            padding: 0.5%;
+            margin-top: -0.5%;
+            border-radius: 10px;
+        }
     
+        .registration-type select:hover{
+            background-color: #D9D9D9;
+        }
+
         .fullname .inputs input{
             width: 8.75%;
         }
@@ -49,7 +68,15 @@
             border-radius: 2%;
             overflow: hidden;
         }
-    
+        
+        .inputs #subdivision{ 
+            width: 2%;
+        }
+
+        .inputs #division{ 
+            width: 16%;
+        }
+
         .inputssubmit{ 
             display: flex;
             justify-content: center;
@@ -171,7 +198,50 @@
         .boxtitles a{
             font-size: 1.7vh;
         }
-    
+
+        #team-fields .boxtitles{
+            margin-top: 2%;
+        }
+
+        .age-dropdown {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            margin-top: 1%;
+        }
+
+        .age-dropdown button{
+            width: 320px;
+            padding: 0.5%;
+            height: 30px;
+        }
+
+        .age-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-bottom: 10%;
+        }
+
+        .age-dropdown-content label {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .age-dropdown:hover .age-dropdown-content {
+            display: block;
+        }
+        
+        .age-dropdown:hover .age-dropdown-content label{
+            display: inline;
+        }
+
         @media only screen and (max-width: 600px) {
             .boxtitles p{
                 font-size: 2vh;
@@ -276,7 +346,7 @@
         <div class="dropdown">
             <a href="">BROWSE</a>
             <div class="dropdown-content">
-                <a href="searchresults.html">BROWSE TEAMS</a>
+                <a href="{% url 'searchresults' %}">BROWSE TEAMS</a>
                 <a href="">BROWSE LEAGUES</a>
             </div>
         </div>
@@ -298,44 +368,108 @@
 
 <br>
 <form onsubmit="welcome()">
-    <div class="fullname">
+    <div class="registration-type">
+        <label for="role">I am registering as:</label>
+        <select id="role" name="role" onchange="toggleFields()">
+            <option value="Player">Player</option>
+            <option value="Team">Team</option>
+        </select>
+    </div>
+
+    <!-- Player Fields -->
+    <div id="player-fields">
+        <div class="fullname">
+            <div style="margin-bottom: 0.3%;" class="inputs">
+                <input type="text" name="firstname" placeholder="First name" required>
+                <input type="text" name="lastname" placeholder="Last name" required>
+            </div>
+        </div>
+
+        <div class="boxtitles">
+            <p style="margin-right: 15%;">Date of birth</p>
+        </div>
         <div style="margin-bottom: 0.3%;" class="inputs">
-            <input type="text" name="firstname" placeholder="First name" required>
-            <input type="text" name="lastname" placeholder="Last name" required>
+            <input type="date" name="dob" required>
+        </div>
+
+        <div class="boxtitles">
+            <p style="margin-right: 15%;">Email address</p>
+        </div>
+        <div style="margin-bottom: 0.3%;" class="inputs">
+            <input type="text" name="email" placeholder="youremail@email.com" required>
+        </div>
+
+        <div class="boxtitles">
+            <p style="margin-right: 13%;">Desired username</p>
+        </div>
+        <div style="margin-bottom: 0.3%;" class="inputs">
+            <input type="text" name="username" required>
+        </div>
+
+        <div class="boxtitles">
+            <p style="margin-right: 17%; margin-top: 0;">Password</p>
+        </div>
+        <div style="margin-bottom: 0.5%;" class="inputs">
+            <input type="password" name="password" required>
+        </div>
+
+        <div class="boxtitles">
+            <p style="margin-right: 13%; margin-top: 0;">Confirm password</p>
+        </div>
+        <div style="margin-bottom: 0.5%;" class="inputs">
+            <input type="password" name="confirmpassword" required>
         </div>
     </div>
 
-    <div class="boxtitles">
-        <p style="margin-right: 15%;">Date of birth</p>
+    <!-- Team Fields (Hidden by Default) -->
+    <div id="team-fields" style="display: none;">
+        <div class="boxtitles">
+            <p style="margin-right: 13%; margin-top: 0;">Team Name</p>
+        </div>
+        <div class="inputs">
+            <input type="text" name="teamname" placeholder="Team name" required>
+        </div>
+        <div class="boxtitles">
+            <p style="margin-right: 0%;">Email address (team email address recommended)</p>
+        </div>
+        <div style="margin-bottom: 0.3%;" class="inputs">
+            <input type="text" name="email" placeholder="youremail@email.com" required>
+        </div>
+        <div class="boxtitles">
+            <p style="margin-right: 13%; margin-top: 0;">Year Established</p>
+        </div>
+        <div class="inputs">
+            <input type="number" id="yearInput" name="established" min="1900" placeholder="Year of establishment" required>
+        </div>
+        <div class="boxtitles">
+            <p style="margin-right: 13%; margin-top: 0;">Country</p>
+        </div>
+        <div class="inputs">
+            <input type="text" name="country">
+        </div>
+        <div style="text-align: center;" class="boxtitles">
+            <p style="margin-right: 1%; display: inline; margin-top: 0;">Division</p>
+            <p style="margin-left: 10%; display: inline; margin-top: 0;">Subdivision</p>
+        </div>
+        <div class="inputs">
+            <input id="division" type="number" name="division" min="1" max= "10">
+            <input id="subdivision" type="text" name="subdivision">
+        </div>
+        <div class="boxtitles">
+            <p style="margin-right: 13%; margin-top: 0;">Age Group</p>
+        </div>
+        <div class="age-dropdown">
+            <button>Select Age Group</button>
+            <div class="age-dropdown-content">
+                <label><input type="checkbox" name="age-category" value="Youth"> Youth</label>
+                <label><input type="checkbox" name="age-category" value="Senior"> Senior</label>
+            </div>
+        </div>
+        <br>
+        <br>
     </div>
-    <div style="margin-bottom: 0.3%;" class="inputs">
-        <input type="date" name="dob" required>
-    </div>
-    <div class="boxtitles">
-        <p style="margin-right: 15%;">Email address</p>
-    </div>
-    <div style="margin-bottom: 0.3%;" class="inputs">
-        <input type="text" name="email" placeholder="youremail@email.com" required>
-    </div>
-    <div class="boxtitles">
-        <p style="margin-right: 13%;">Desired username</p>
-    </div>
-    <div style="margin-bottom: 0.3%;" class="inputs">
-        <input type="text" name="username" required>
-    </div>
-    <div class="boxtitles">
-        <p style="margin-right: 17%; margin-top: 0;">Password</p>
-    </div>
-    <div style="margin-bottom: 0.5%;" class="inputs">
-        <input type="password" name="password" placeholder="" required>
-    </div>
-    <div class="boxtitles">
-        <p style="margin-right: 13%; margin-top: 0;"> Confirm password</p>
-    </div>
-    <div style="margin-bottom: 0.5%;" class="inputs">
-        <input type="password" name="confirmpassword" placeholder="" required>
-    </div>
-        
+
+    <!-- Submit Button -->
     <div style="margin-top: 2%;" class="inputssubmit">
         <input type="submit" value="Sign up">
     </div>
@@ -353,7 +487,27 @@ Copyright &copy; 2024
 <a href="contactus.html"> CONTACT US </a>
 </div>
 </footer>
-<script src="GIRJAVA.js"></script>
+<script>
+    function toggleFields() {
+        var role = document.getElementById("role").value;
+        var playerFields = document.getElementById("player-fields");
+        var teamFields = document.getElementById("team-fields");
+    
+        if (role === "Player") {
+            playerFields.style.display = "block";
+            teamFields.style.display = "none";
+        } else if (role === "Team") {
+            playerFields.style.display = "none";
+            teamFields.style.display = "block";
+        }
+    }
+    
+    // Call the function on page load to ensure the correct fields are displayed
+    document.addEventListener("DOMContentLoaded", function() {
+        toggleFields();  // This will show the correct fields when the page first loads
+    });
+</script>
+<script src="{% static 'js/GIRJAVA.js' %}"></script>
 </body>
 
 

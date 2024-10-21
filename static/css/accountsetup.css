@@ -1,0 +1,29 @@
+.cover-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    max-width: 90%;
+    height: 42vh;
+    position: relative;
+    left: 5%;
+}
+
+.clubname .teamlogo{
+    display: block;
+    position: relative;
+    left: 2.55%;
+}
+
+.clubname .teamlogo img{
+    height: 100%;
+    background-color: white;
+    width: 110vh;
+    border-radius: 50%;
+}
+
+.clubname .teamlogo button{
+    display: block;
+    position: relative;
+    left: 5%;
+}

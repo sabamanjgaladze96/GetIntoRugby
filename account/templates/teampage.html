@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <link href="{% static 'css/GIR.css' %}" rel="stylesheet">
+    <link href="{% static 'css/accountsetup.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap">
+    <meta name="googlebot" content="notranslate">
+    <meta name="robots" content="index">
+    <meta name="description" content ="Origins and early history
+    Clontarf Football Club currently plays at Castle Avenue, where it moved in 1896. The club gets its mascot from the meaning of Clontarf, which translates as 'meadow of the bull. The red and blue colours are used by most sporting clubs in the area. The club was formed before the establishment of the Irish Rugby Football Union.
+    
+    Separate and shared facilities
+    Since 1896, the grounds at Castle Avenue have been jointly occupied by Clontarf Cricket Club and the rugby club. Until 1947, both games were played on the same ground, and the wicket was fenced off in the winter. In 1982, following a fire which destroyed the bar and lounge, an agreement was reached between both clubs to go their separate ways. Subsequently, each club was provided with separate premises and the use of a common main bar and hall for each club's season.
+    
+    Playing highlights
+    In 1902, Clontarf was admitted to Senior Ranks">
+</head>
+
+<body>
+   
+    <nav>
+        <div class="logocorner">
+            <a href="{% url 'home' %}"><img src="{% static 'images/GIRwhiteball.png' %}" alt="GIRwhiteball" style="text-align: left; max-width: 30px;"></a>
+        </div>
+
+        <div class="navigation">
+            <a href="https://www.world.rugby/organisation/about-us/overview"> ABOUT US </a>
+            <div class="dropdown">
+                <a href="">BROWSE</a>
+                <div class="dropdown-content">
+                  <a href="{% url 'searchresults' %}">BROWSE TEAMS</a>
+                  <a href="">BROWSE LEAGUES</a>
+                </div>
+            </div>
+
+            <a href="https://www.world.rugby/news"> NEWS </a>
+        </div>
+        
+        <div style="font-size: 1.7vh;" class="account">
+            <img src="{% static 'svgs/accountdivider.svg' %}" alt="">
+            <img src="{% static 'svgs/accounticon.svg' %}" alt="" style="margin-left: 13%;">
+            <a href="{% url 'team' %}"> LOG OUT </a>
+        </div>
+
+    </nav>
+    
+    <div class="experiment">
+        <br>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a team, or just enter your address">
+            <a href="{% url 'searchresults' %}"><button type="submit" id="search-button">Search</button></a>
+        </div>
+        <div class="dividersearchresultstop">
+            <svg style="max-width: 100%;" width="1728" height="1" viewBox="0 0 1728 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1728" height="1" fill="#D9D9D9"/>
+                </svg>
+        </div>
+    </div>
+    <div class="cover-photo">
+        <img id="cover-pic" src="{% static 'svgs/add_photo.svg' %}" alt="Cover Photo">
+        <button onclick="uploadCoverPhoto()">Change Cover Photo</button>
+        <input type="file" id="cover-upload" accept="image/*" style="display:none;">
+    </div>
+    
+
+    <br>
+
+    <svg class="dark" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="turndark()">
+        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+        <g id="Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="ic_fluent_dark_theme_24_regular" fill="#212121" fill-rule="nonzero">
+                <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z" id="Color">
+    </path>
+            </g>
+        </g>
+    </svg>
+
+    <div class="clubname">
+        <div class="teamlogo">
+            <img id="profile-pic" src="{% static 'svgs/add_photo.svg' %}" alt="Profile Picture">
+            <br>
+            <button onclick="uploadProfilePicture()">Change Team Logo</button>
+            <input type="file" id="profile-upload" accept="image/*" style="display:none;">
+        </div>
+        <h2>NAME | EST YEAR</h2>
+        <h3> DIVISION: X</h3>
+        <div class="history">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque felis vitae nisi luctus, vel consequat turpis feugiat. Sed fringilla, nisl a tincidunt dictum, eros velit tincidunt metus, in faucibus neque enim eget turpis. Duis hendrerit sapien non libero egestas, et dictum magna consequat. Phasellus vehicula, eros et ultrices luctus, purus ipsum congue sapien, ac dignissim arcu est sit amet purus. Ut luctus mi nec tortor scelerisque, et ultr
+
+            </p>
+        </div>
+    </div>
+    <div class="age-address">
+        <div class="one">
+            <h2>AGE GROUP</h2>
+            <p>GROUP</p>
+        </div>
+        <svg width="1" height="90" viewBox="0 0 2 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H2V90H0V0Z" fill="#00419B"/>
+            </svg>
+        <div class="two">
+            <h2>TRAINING GROUND ADDRESS</h2>
+            <p>Address</p>
+        </div>
+    </div>
+
+
+    <br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2380.7541727427965!2d-6.20730492341115!3d53.36555427229484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670faf202ac503%3A0xdf0e5a503e086fe2!2sCastle%20Ave%2C%20Clontarf%20East%2C%20Dublin!5e0!3m2!1sen!2sie!4v1728513760700!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                
+    </iframe>
+    <br>
+    <div class="contact-info">
+        <div class="map">
+        </div>
+        <h2>Contact Our Recruiters</h2>
+        <p>Phone Number: Phone</p>
+        <p>Email Address: Email</p>
+    </div>
+    <a class="twitter-timeline" data-width="400" data-height="500" href="https://twitter.com/ClontarfRugby?ref_src=twsrc%5Etfw">Tweets by ClontarfRugby</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <br>
+    <div class="videoheader">
+        <h2> CHECK US OUT</h2>
+    </div>
+    <iframe src="" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<footer> 
+
+    Copyright &copy; 2024
+    
+    <div class="contact">
+        <a href="contactus.html"> CONTACT US </a>
+    </div>
+</footer>
+<script src="{% static 'js/GIRJAVA.js' %}"></script>
+<script src="{% static 'js/accountsetup.js' %}"></script>
+</body>
+</html>

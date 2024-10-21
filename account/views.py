@@ -5,3 +5,6 @@ def login(request):
 
 def register(request):
     return render(request, 'register.html')
+
+def teampage(request):
+    return render(request, 'teampage.html')
