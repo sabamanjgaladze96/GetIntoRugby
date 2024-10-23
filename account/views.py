@@ -9,7 +9,7 @@ def register(request):
 def teampage(request):
     return render(request, 'teampage.html', {'team_name':'',
                                              'established':'',
-                                             'division': '',
+                                             'division': 'jupyt',
                                              'subdivision':'',
                                              'age_group': '',
                                              'training_ground_address': '',

@@ -14,6 +14,7 @@ class Team(models.Model):
     training_ground_address = models.TextField()
     contact_phone = models.CharField(max_length=15)
     contact_email = models.EmailField()
+
     twitter_link = models.URLField(max_length=200, blank=True, null=True)
     youtube_embed_link = models.URLField(max_length=200, blank=True, null=True)
 
@@ -31,8 +32,12 @@ class Team(models.Model):
         return self.name
 
 class TeamImages(models.Model):
-    logo = models.ImageField()
-    cover_photo = models.ImageField()
+    team = models.OneToOneField(Team, on_delete=models.CASCADE, related_name='images')
+    logo = models.ImageField(upload_to='media/team_logos/', blank=True null=True)
+    cover_photo = models.ImageField(upload_to='media/team_covers/', blank=True null=True)
+
+    def __str__(self):
+        return f"images for {self.team.team_name}"
 
 
 class Player(models.Model):
