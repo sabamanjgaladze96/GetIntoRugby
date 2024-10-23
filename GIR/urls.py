@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import debug_toolbar
 
 
 # Other Directories
@@ -24,5 +25,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('searchresults/', include('searchresults.urls')),
     path('team/', include('team.urls')),
-    path('account/', include('account.urls'))
+    path('account/', include('account.urls')),
+    path('__debug__/', include(debug_toolbar.urls))
 ]
